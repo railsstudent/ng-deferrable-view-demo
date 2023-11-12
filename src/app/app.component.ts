@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LargeComponent } from './large-component/large-component.component';
-import { ViewportComponent } from './viewport/viewport.component';
+import { ViewportHostComponent } from './viewport-host/viewport-host.component';
 
 const N = 75;
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [LargeComponent, ViewportComponent],
+  imports: [LargeComponent, ViewportHostComponent],
   template: `
     <div class="container">
       <h1>Hello from {{ name }}!</h1>
@@ -38,16 +38,7 @@ const N = 75;
         <li>{{ item }}</li>
       }
       </ul>
-      <p #bottom>At the bottom of the page</p>
-      @defer (on viewport(bottom)) {
-        <app-viewport />
-      } @loading (after 500ms; minimum 100ms) {
-        <p>Loading....</p>
-      } @placeholder (minimum 500ms) {
-        <p>Placeholder of viewport component</p>
-      } @error {
-        <p>Error loading the component</p>
-      }
+      <app-viewport-host />
     </div>
   `,
   styles: [`
