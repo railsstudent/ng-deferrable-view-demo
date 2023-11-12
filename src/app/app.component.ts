@@ -2,8 +2,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LargeComponent } from './large-component/large-component.component';
 import { ViewportHostComponent } from './viewport-host/viewport-host.component';
 
-const N = 75;
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -33,11 +31,6 @@ const N = 75;
       } @error {
         <p>Error loading the component</p>
       }
-      <ul>
-      @for (item of items; track item) {
-        <li>{{ item }}</li>
-      }
-      </ul>
       <app-viewport-host />
     </div>
   `,
@@ -45,15 +38,10 @@ const N = 75;
     div.container {
       padding: 1rem;
     }
-
-    li {
-      margin-left: 1rem;
-    }
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   name = 'Deferred View';
   isLoad = false;
-  items = [ ...Array(N).keys() ].map( i => i+1);
 }
