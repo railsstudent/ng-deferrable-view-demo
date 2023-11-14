@@ -9,7 +9,7 @@ import { ViewportHostComponent } from './viewport-host/viewport-host.component';
   template: `
     <div class="container">
       <h1>Hello from {{ name }}!</h1>
-      <div style='margin-bottom: 1rem;'>
+      <div class="button-container">
         <button (click)="isLoad = true">Load</button>
       </div>
       @defer (when isLoad === true) {
@@ -37,6 +37,10 @@ import { ViewportHostComponent } from './viewport-host/viewport-host.component';
   styles: [`
     div.container {
       padding: 1rem;
+    }
+
+    div.button-container {
+      margin-bottom: 1rem;
     }
   `],
   changeDetection: ChangeDetectionStrategy.OnPush,
