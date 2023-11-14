@@ -42,6 +42,6 @@ import { ViewportHostComponent } from './viewport-host/viewport-host.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  name = 'Deferred View';
+  name = 'Deferrable View';
   isLoad = false;
 }
