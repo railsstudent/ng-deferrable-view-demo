@@ -31,5 +31,5 @@ import { WhenConditionHostComponent } from './when-condition/when-condition-host
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  name = 'Deferred View';
+  name = 'Deferrable View';
 }
