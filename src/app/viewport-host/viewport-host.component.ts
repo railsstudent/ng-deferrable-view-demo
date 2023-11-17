@@ -32,5 +32,5 @@ const N = 75;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ViewportHostComponent {
-  items = [ ...Array(N).keys() ].map( i => i + 1);
+  items = [ ...Array(N).keys() ].map(i => i + 1);
 }
